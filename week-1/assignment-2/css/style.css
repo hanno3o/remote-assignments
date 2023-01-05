@@ -3,6 +3,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	overflow: hidden;
+	font-family: serif;
 }
 
 /* nav */
@@ -10,41 +11,43 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 5px 0px;
-	border: 2px solid green;
+	padding: 0px 20px;
+	height: 60px;
+	line-height: 60px;
+	background: #eee;
 }
 
-.logo {
-	padding-left: 30px;
+nav .logo {
+	padding-left: 20px;
 	text-decoration: none;
 	color: #000;
+	font-weight: 800;
+	letter-spacing: .5px;
 }
 
 
 nav ul {
-	flex: 1;
-	text-align: right;
-	padding-right: 15px;
+	display: flex;
 }
 
 
 nav ul li {
-	display: inline-block;
-	list-style: none;
-	padding: 10px 30px;
+	cursor: pointer;
+	height: 100%;
+	padding: 0 15px;
+	transition: .4s;
 }
 
 
 nav ul li a {
+	color: #000;
 	font-size: 14px;
 	font-weight: 200;
 	text-decoration: none;
-	position: relative;
-	color: #000;
 }
 
 nav ul li:hover {
-	background-color: aquamarine;
+	background: #ccdeee;
 }
 
 
@@ -52,16 +55,21 @@ nav ul li:hover {
 
 .cover {
 	height: 5em;
-	border: 2px solid orange;
+	background: #ccdeee;
 	text-align: center;
-	font-size: 35px;
+	font-size: 40px;
+	font-weight: 900;
 	line-height: 5em;
 }
 
 /* section */
 
+section h3 {
+	font-size: 25px;
+	font-weight: 900;
+}
+
 section {
-	border: 2px solid royalblue;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -74,16 +82,23 @@ section {
 	display: flex;
 	flex-flow: wrap row;
 	justify-content: space-between;
-	border: 2px solid royalblue;
 	margin-top: 10px;
 }
 
 .content-box {
-	border: 2px solid royalblue;
+	font-size: 18px;
+	background: #889aaa;
 	margin-bottom: 20px;
-	padding: 5px;
+	padding-top: 15px;
 	width: 49%;
-	height: 150px;
+	height: 160px;
+}
+
+.cta {
+	border: 0;
+	background-color: #ccdeee;
+	padding: 15px 10px;
+	cursor: pointer;
 }
 
 /***** media queries *****/
@@ -107,10 +122,11 @@ section {
 	.content-box {
 		width: 100%;
 	}
-
 }
 
 @media screen and (max-width: 800px) {
 
-
 }
+
+
+
