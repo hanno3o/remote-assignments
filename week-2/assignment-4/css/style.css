@@ -4,7 +4,7 @@
 	border: 0;
 	outline: 0;
 	box-sizing: border-box;
-	overflow: hidden;
+	overflow: scroll;
 }
 
 /* nav */
@@ -92,6 +92,11 @@ section {
 	margin-top: 10px;
 }
 
+.wrap-hidden {
+	display: none;
+	margin-top: 20px;
+}
+
 .content-box {
 	color: #fff;
 	font-size: 16px;
@@ -117,13 +122,37 @@ section {
 }
 
 .box-3 {
-	background-image: linear-gradient(transparent, #300450),url('https://www.udiscovermusic.com/wp-content/uploads/2020/08/GI-DLE_DUMDiDUMDi-.jpg');
+	background-image: linear-gradient(transparent, #300450),url('https://i.ytimg.com/vi/HyTSzQocStI/maxresdefault.jpg');
 	background-size: cover;
 	background-position: center;
 }
 
 .box-4 {
 	background-image: linear-gradient(transparent, #300450),url('https://thebiaslistcom.files.wordpress.com/2018/05/gi-dle-latata.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.box-5 {
+	background-image: linear-gradient(transparent, #300450),url('https://www.billboard.com/wp-content/uploads/media/G-idle-Hann-2018-vid-billboard-1548.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.box-6 {
+	background-image: linear-gradient(transparent, #300450),url('https://kpopping.com/documents/c4/5/2000/80108389_20200819100733_org.jpeg?v=ba791');
+	background-size: cover;
+	background-position: top;
+}
+
+.box-7 {
+	background-image: linear-gradient(transparent, #300450),url('https://media.allure.com/photos/625cbce5cb478756af23433f/master/pass/gidle%20tomboy%20cover%20photo%20final.jpg');
+	background-size: cover;
+	background-position: top;
+}
+
+.box-8 {
+	background-image: linear-gradient(transparent, #300450),url('https://nosubmarinesdotcom.files.wordpress.com/2020/04/cgwttir.jpg');
 	background-size: cover;
 	background-position: center;
 }
@@ -136,6 +165,11 @@ section {
 	border-radius: 5px;
 	background: #000;
 	padding: 10px 20px;
+}
+
+.cta:hover {
+	color: #b470e4;
+	transition: .5s;
 }
 
 nav label {
