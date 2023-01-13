@@ -15,6 +15,9 @@ nav {
 	height: 60px;
 	line-height: 60px;
 	background: #eee;
+	position: fixed;
+	width: 100vw;
+	z-index: 1;
 }
 
 nav .logo {
@@ -22,18 +25,19 @@ nav .logo {
 	margin-top: 10px;
 }
 
-
 nav ul {
 	display: flex;
 }
 
-
 nav ul li {
 	cursor: pointer;
 	height: 100%;
-	transition: .4s;
+	transition: .5s;
 }
 
+nav ul li:hover {
+	background: #7100bf;
+}
 
 nav ul li a {
 	display: block;
@@ -45,17 +49,15 @@ nav ul li a {
 	padding: 0 15px;
 }
 
-nav ul li:hover {
-	background: #7100bf;
-}
-
 nav ul li a:hover {
 	color: #fff;
 }
 
+#toggler {
+	display: none;
+}
 
 /* cover */
-
 .cover {
 	background: #7100bf;
 	position: relative;
@@ -65,11 +67,11 @@ nav ul li a:hover {
 	font-family: serif;
 	font-size: 20px;
 	font-weight: 900;
-	line-height: 8em;
+	line-height: 10em;
+	margin-top: 35px;
 }
 
 /* section */
-
 section h3 {
 	font-size: 26px;
 	font-weight: 900;
@@ -83,7 +85,6 @@ section {
 	align-items: center;
 	padding: 15px 0px;
 }
-
 
 .wrap {
 	display: flex;
@@ -172,24 +173,7 @@ section {
 	transition: .5s;
 }
 
-nav label {
-	display: none;
-	height: min-content;
-	margin: 20px 10px 0 0;
-	cursor: pointer;
-}
-
-nav input {
-	display: none;
-}
-
-nav input:checked ~ nav ul {
-	transform: translateY(0);
-}
-
-
 /***** media queries *****/
-
 @media screen and (min-width: 1200px) {
 	.wrap {
 		width: 1200px;
@@ -202,6 +186,73 @@ nav input:checked ~ nav ul {
 	}
 }
 
+@media screen and (max-width: 800px) {
+	nav ul {
+		position: fixed;
+		background: #eee;
+		width: 30%;
+		height: 100vh;
+		text-align: center;
+		top: 60px;
+		right: -100%;
+		gap: 0;
+		flex-direction: column;
+		transition: .5s ease-in-out;
+		z-index: 1;
+	}
+	nav ul.active {
+		right: 0;
+	}
+	nav ul li {
+		height: 60px;
+	}
+	.burger {
+		display: block;
+		width: 25px;
+		height: 60px;
+		position: relative;
+		top: 20px;
+		cursor: pointer;
+	}
+	.burger span {
+		position: relative;
+		display: block;
+		height: 3px;
+		border-radius: 1px;
+		background: #000;
+		transition: all .2s ease-in-out, top .2s ease-in-out;
+		top: 0;
+	}
+	.burger span:nth-child(2) {
+		margin-top: 5px;
+	}
+	.burger span:nth-child(3) {
+		margin-top: 5px;
+	}
+	#toggler {
+		display: none;
+	}
+	#toggler:checked + label .burger.active span:nth-child(1){
+		transform: rotate(45deg);
+		top: 10px;
+		transition: top .2s ease-in-out, transform .2s ease-in-out;
+	}
+	#toggler:checked + label .burger.active span:nth-child(2){
+		display: none;
+	}
+	#toggler:checked + label .burger.active span:nth-child(3){
+		transform: rotate(-45deg);
+		top: 2px;
+		transition: top .2s ease-in-out, transform .2s ease-in-out;
+	}
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+	.cover {
+		font-size: 16px;
+	}
+}
+
 @media screen and (max-width: 500px) {
 	.wrap {
 		width: 90%;
@@ -210,37 +261,15 @@ nav input:checked ~ nav ul {
 		width: 100%;
 	}
 	.cover {
-		font-size: 12px;
+		font-size: 15px;
+		height: 10em;
+		line-height: 12em;
+	}
+	nav ul li {
+		height: 50px;
+		line-height: 50px;
 	}
 	nav ul li a {
-		font-size: 5px;
+		font-size: 13px;
 	}
 }
-
-
-@media screen and (min-width: 500px) and (max-width: 800px) {
-	.cover {
-		font-size: 16px;
-	}
-}
-
-@media screen and (max-width: 800px) {
-	nav ul {
-		display: grid;
-		position: absolute;
-		background-color: #eee;
-		width: 20%;
-		text-align: center;
-		margin-right: 20px;
-		top: 60px;
-		right: 0;
-		/* transform: translateY(-100%); */
-		z-index: 1;
-		transition: .5s;
-	}
-	nav label {
-		display: grid !important;
-	}
-}
-
-
