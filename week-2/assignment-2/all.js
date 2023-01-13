@@ -1,7 +1,7 @@
 function calculate (arg) {
-    const num1 = Object.values(arg)[0]
-    const num2 = Object.values(arg)[1]
-    const operator = Object.values(arg)[2]
+    const num1 = arg.n1
+    const num2 = arg.n2
+    const operator = arg.op
     let result
     if (operator === '+'){
         result = num1 + num2
