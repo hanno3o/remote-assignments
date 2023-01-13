@@ -1,5 +1,5 @@
 function max (numbers) {
-    if (Object.prototype.toString.call(numbers) === '[object Array]') {
+    if (numbers.constructor === Array) {
         let maxNum = 0;
         numbers.forEach(num => {
             if (num > maxNum) {
