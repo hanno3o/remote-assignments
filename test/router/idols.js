@@ -11,5 +11,5 @@ router.get("/page", (req, res) => {
     res.json({message: "我是 /idols/page 的路徑！"}) //.json就是會拋一個 JSON 的資料
 })
 
-// [module][1] 將 router 輸出，等別人 require 引入使用
+// [module][1] 將 router 輸出，等待被 require 引入使用
 module.exports = router
