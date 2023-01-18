@@ -1,15 +1,10 @@
 const express = require("express")
+const bodyParser = require("body-parser")
 const app = express()
 const portNum = 3000
 
-const colors = [
-    'red',
-    'orange',
-    'yellow',
-    'green',
-    'blue',
-    'purple'
-  ];
+
+app.use(bodyParser.urlencoded({ extended: false}))
 
 /***引入/router/about.js 程式***/
 const aboutRouter = require("./router/about")  // 當前目錄的相對路徑，.js 可以忽略不寫
@@ -26,15 +21,26 @@ app.set("view engine", "pug")
 app.get("/getData", (req, res) => {
     let num = Number(req.query.number)
     res.send(`${(1+num)*num/2}`)
-}) //card.pug
+}) 
+
+/***index***/
+app.get("/", (req, res) => {
+    res.render("index") //不需要加上.pug ，因為已經設定了 view engine 是 pug
+})
 
 /***cards***/
 app.get("/card", (req, res) => {
     res.render("card", {prompt: "Who is buried in Grant's tomb?", colors})
 })
 
-app.get("/", (req, res) => {
-    res.render("index") //不需要加上.pug ，因為已經設定了 view engine 是 pug
+/***hello***/
+app.get("/hello", (req, res) => {
+    res.render("hello")
+})
+
+app.post("/hello", (req, res) => {
+    console.dir(req.body)
+    res.render("hello")
 })
 
 
