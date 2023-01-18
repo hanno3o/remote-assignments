@@ -5,6 +5,8 @@ html(lang="eg")
     body
         h1 Flash Cards
         section#content
+            each color in colors
+              li= color
         h2= prompt
         if hint 
             p

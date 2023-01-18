@@ -2,6 +2,15 @@ const express = require("express")
 const app = express()
 const portNum = 3000
 
+const colors = [
+    'red',
+    'orange',
+    'yellow',
+    'green',
+    'blue',
+    'purple'
+  ];
+
 /***引入/router/about.js 程式***/
 const aboutRouter = require("./router/about")  // 當前目錄的相對路徑，.js 可以忽略不寫
 
@@ -21,7 +30,7 @@ app.get("/getData", (req, res) => {
 
 /***cards***/
 app.get("/card", (req, res) => {
-    res.render("card", {prompt: "Who is buried in Grant's tomb?", hint:"Think about whose tomb it is?"})
+    res.render("card", {prompt: "Who is buried in Grant's tomb?", colors})
 })
 
 app.get("/", (req, res) => {
