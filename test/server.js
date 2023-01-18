@@ -17,6 +17,11 @@ app.set("view engine", "pug")
 app.get("/getData", (req, res) => {
     let num = Number(req.query.number)
     res.send(`${(1+num)*num/2}`)
+}) //card.pug
+
+/***cards***/
+app.get("/card", (req, res) => {
+    res.render("card", {prompt: "Who is buried in Grant's tomb?"})
 })
 
 app.get("/", (req, res) => {
