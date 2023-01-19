@@ -1,7 +1,7 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const app = express()
-const portNum = 3000
+const portNum = 8000
 
 
 app.use(bodyParser.urlencoded({ extended: false}))
@@ -39,8 +39,7 @@ app.get("/hello", (req, res) => {
 })
 
 app.post("/hello", (req, res) => {
-    console.dir(req.body)
-    res.render("hello")
+    res.render("hello", {name: req.body.username})
 })
 
 
