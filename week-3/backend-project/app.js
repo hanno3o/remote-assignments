@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
 const port = process.env.port || 3000;
+const dataRouter = require("./routes/getData") 
+
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
@@ -17,7 +19,6 @@ app.use ((err, req, res, next) => {
   res.send('<h1>Internal Server Error</h1>')
 })
 
-// port
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
