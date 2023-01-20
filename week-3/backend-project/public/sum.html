@@ -12,8 +12,12 @@
     <h1>sum.html</h1>
     <div class="wrap">
         <h2>Enter a Number</h2>
-        <input name="input">
-        <button name= "button" type="submit">submit</button>
+        <form action="/getData" method="POST">
+            <input type="number" placeholder="請輸入數字">
+            <input type="submit" value="SUBMIT">
+        </form>
+        <div id="result"></div>
     </div>
+    <script src="sum.js"></script>
 </body>
 </html>
