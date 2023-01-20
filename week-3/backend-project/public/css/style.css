@@ -4,3 +4,8 @@ h1 {
     text-align: center;
     padding: 1.2em;
 }
+
+.wrap {
+    margin-top: 35px;
+    text-align: center;
+}
