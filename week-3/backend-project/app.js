@@ -1,12 +1,23 @@
 const express = require('express')
 const app = express()
 const port = process.env.port || 3000;
-const dataRouter = require("./routes/getData") 
 
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
   res.send('<h1>Hello, My Server!<h1>')
+})
+
+app.get('/getData', (req, res) => { 
+  let num = req.query.number
+  if (!num) {
+      res.send('Lack of Parameter')
+  } else if(!Number(num)) {
+      res.send('Wrong Parameter')
+  } else {
+      num = Number(num)
+      res.send(`${(1+num)*num/2}`)
+  }
 })
 
 app.use ((req, res, next) => {
