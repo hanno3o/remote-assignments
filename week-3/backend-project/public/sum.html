@@ -12,12 +12,19 @@
     <h1>sum.html</h1>
     <div class="wrap">
         <h2>Enter a Number</h2>
-        <form action="/getData" method="POST">
-            <input type="number" placeholder="請輸入數字">
-            <input type="submit" value="SUBMIT">
+        <form action="/getData" method="GET">
+            <input type="number" id="number" name="number" placeholder="請輸入數字">
+            <input type="submit" id="submit" value="SUBMIT">
         </form>
         <div id="result"></div>
     </div>
-    <script src="sum.js"></script>
+    <script>
+        fetch('http://localhost:3000/getData?number=10')
+            .then(res => res.json())
+            .then(data => console.log(data)) 
+            .catch(error => {
+                console.log(`Error: ${error}`);
+            })
+    </script>
 </body>
 </html>
