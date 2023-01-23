@@ -12,19 +12,34 @@
     <h1>sum.html</h1>
     <div class="wrap">
         <h2>Enter a Number</h2>
-        <form action="/getData" method="GET">
+        <form action="/getData" method="GET" class="form">
             <input type="number" id="number" name="number" placeholder="請輸入數字">
             <input type="submit" id="submit" value="SUBMIT">
+            
         </form>
-        <div id="result"></div>
     </div>
     <script>
+        const wrap = document.querySelector('.wrap')
+        const form = document.querySelector('.form')
+        const number = document.querySelector('#number')
         fetch('http://localhost:3000/getData?number=10')
             .then(res => res.json())
             .then(data => console.log(data)) 
             .catch(error => {
                 console.log(`Error: ${error}`);
             })
+
+        let inputNum
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            inputNum = number.value
+            fetch(`http://localhost:3000/getData?number=${inputNum}`)
+                .then(res => res.json())
+                .then(data => wrap.innerHTML += `<div class="result">從1加到${inputNum}的結果為${data}</div>`)
+                .catch(error => {
+                    console.log(`Error: ${error}`)
+                })
+        })
     </script>
 </body>
 </html>
