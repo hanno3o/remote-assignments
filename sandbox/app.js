@@ -1,26 +1,10 @@
-'use strict';
+const title = React.createElement(
+    'h1',
+    {id: 'main-title', title: 'This is a title'},
+    'My firsr React element!'
+)
 
-const e = React.createElement;
-
-class LikeButton extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { liked: false };
-  }
-
-  render() {
-    if (this.state.liked) {
-      return 'You liked this.';
-    }
-
-    return e(
-      'button',
-      { onClick: () => this.setState({ liked: true }) },
-      'Like'
-    );
-  }
-}
-
-const domContainer = document.querySelector('#like_button_container');
-const root = ReactDOM.createRoot(domContainer);
-root.render(e(LikeButton));
+ReactDOM.render(
+    title,
+    document.getElementById('root')
+)
