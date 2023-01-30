@@ -29,7 +29,10 @@ const Counter = () => (
 const App = () => {
     return (
         <div className="scoreboard">
-            <Header title="Scoreboard" totalplayers={1}/>
+            <Header 
+                title="Scoreboard" 
+                totalplayers={1}
+            />
             <Player />
         </div>
     )
