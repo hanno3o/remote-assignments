@@ -1,3 +1,30 @@
+const players = [
+    {
+        name: "hanno3o",
+        score: 50,
+        id: 1
+    },
+    {
+        name: "hernsze",
+        score: 85,
+        id: 2
+    },
+    {
+        name: "potato",
+        score: 95,
+        id: 3
+    },
+    {
+        name: "shishi",
+        score: 80,
+        id: 4
+    },
+    {
+        name: "chentingli",
+        score: 16,
+        id: 5
+    }
+]
 const Header = (props) =>  {
     return (
         <header>
@@ -18,31 +45,38 @@ const Player = (props) => {
     )
 }
 
-const Counter = (props) => (
-    <div className="counter">
-        <button className="counter-action decrement"> - </button>
-        <span className="counter-score">{props.score}</span>
-        <button className="counter-action increment"> + </button>
-    </div>
-)
+class Counter extends React.Component {
+    render() {
+        return (
+            <div className="counter">
+                <button className="counter-action decrement"> - </button>
+                <span className="counter-score">{this.props.score}</span>
+                <button className="counter-action increment"> + </button>
+            </div>
+        )
+    }
+    
+}
 
-const App = () => {
+const App = (props) => {
     return (
         <div className="scoreboard">
             <Header 
                 title="Scoreboard" 
-                totalplayers={1}
+                totalplayers={props.initialPlayers.length}
             />
-            {/* Player List */}
-            <Player name="hanno3o" score={50} />
-            <Player name="hernsze" score={86} />
-            <Player name="potato" score={25} />
-            <Player name="chentingli" score={41} />
+            {props.initialPlayers.map(player => 
+                <Player
+                name={player.name}
+                score={player.score}
+                key={player.id.toString()} 
+                 />
+            )}
         </div>
     )
 } 
 
 ReactDOM.render(
-    <App />,
+    <App initialPlayers={players} />,
     document.getElementById('root')
 ) 
