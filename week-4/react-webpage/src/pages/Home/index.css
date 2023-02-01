@@ -1,0 +1,275 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	box-sizing: border-box;
+	overflow: scroll;
+}
+
+/* nav */
+nav {
+	display: flex;
+	justify-content: space-between;
+	padding: 0px 20px;
+	height: 60px;
+	line-height: 60px;
+	background: #eee;
+	position: fixed;
+	width: 100vw;
+	z-index: 1;
+}
+
+nav .logo {
+	width: 40px;
+	margin-top: 10px;
+}
+
+nav ul {
+	display: flex;
+}
+
+nav ul li {
+	cursor: pointer;
+	height: 100%;
+	transition: .5s;
+}
+
+nav ul li:hover {
+	background: #7100bf;
+}
+
+nav ul li a {
+	display: block;
+	height: 100%;
+	color: #000;
+	font-size: 14px;
+	font-weight: 200;
+	text-decoration: none;
+	padding: 0 15px;
+}
+
+nav ul li a:hover {
+	color: #fff;
+}
+
+#toggler {
+	display: none;
+}
+
+/* cover */
+.cover {
+	background: #7100bf;
+	position: relative;
+	height: 8em;
+	color: #fff;
+	text-align: center;
+	font-family: serif;
+	font-size: 20px;
+	font-weight: 900;
+	line-height: 10em;
+	margin-top: 35px;
+}
+
+/* section */
+section h3 {
+	font-size: 26px;
+	font-weight: 900;
+}
+
+section {
+	color: #300450;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 15px 0px;
+}
+
+.wrap {
+	display: flex;
+	flex-flow: wrap row;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+.wrap-hidden {
+	display: none;
+	margin-top: 20px;
+}
+
+.content-box {
+	color: #fff;
+	font-size: 16px;
+	font-weight: 200;
+	letter-spacing: 0.5em;
+	margin-bottom: 20px;
+	padding-top: 160px;
+	width: 49%;
+	height: 200px;
+	border-radius: 10px;
+}
+
+.box-1 {
+	background-image: linear-gradient(transparent, #300450),url('https://danmee.jp/wp-content/uploads/2022/10/GIDLE-Nxde-MV-1024x569.png');
+	background-size: cover;
+	background-position: center;
+}
+
+.box-2 {
+	background-image: linear-gradient(transparent, #300450),url('https://i.ytimg.com/vi/f3AhXS_sgr4/maxresdefault.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.box-3 {
+	background-image: linear-gradient(transparent, #300450),url('https://i.ytimg.com/vi/HyTSzQocStI/maxresdefault.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.box-4 {
+	background-image: linear-gradient(transparent, #300450),url('https://thebiaslistcom.files.wordpress.com/2018/05/gi-dle-latata.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.box-5 {
+	background-image: linear-gradient(transparent, #300450),url('https://www.billboard.com/wp-content/uploads/media/G-idle-Hann-2018-vid-billboard-1548.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.box-6 {
+	background-image: linear-gradient(transparent, #300450),url('https://kpopping.com/documents/c4/5/2000/80108389_20200819100733_org.jpeg?v=ba791');
+	background-size: cover;
+	background-position: top;
+}
+
+.box-7 {
+	background-image: linear-gradient(transparent, #300450),url('https://media.allure.com/photos/625cbce5cb478756af23433f/master/pass/gidle%20tomboy%20cover%20photo%20final.jpg');
+	background-size: cover;
+	background-position: top;
+}
+
+.box-8 {
+	background-image: linear-gradient(transparent, #300450),url('https://nosubmarinesdotcom.files.wordpress.com/2020/04/cgwttir.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.cta {
+	font-size: 14px;
+	letter-spacing: .2em;
+	text-decoration: none;
+	color: #fff;
+	border-radius: 5px;
+	background: #000;
+	padding: 10px 20px;
+}
+
+.cta:hover {
+	color: #b470e4;
+	transition: .5s;
+}
+
+/***** media queries *****/
+@media screen and (min-width: 1200px) {
+	.wrap {
+		width: 1200px;
+	}
+}
+
+@media screen and (min-width: 500px) and (max-width: 1200px) {
+	.wrap {
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	nav ul {
+		position: fixed;
+		background: #eee;
+		width: 30%;
+		height: 100vh;
+		text-align: center;
+		top: 60px;
+		right: -100%;
+		gap: 0;
+		flex-direction: column;
+		transition: .5s ease-in-out;
+		z-index: 1;
+	}
+	nav ul.active {
+		right: 0;
+	}
+	nav ul li {
+		height: 60px;
+	}
+	.burger {
+		display: block;
+		width: 25px;
+		height: 60px;
+		position: relative;
+		top: 20px;
+		cursor: pointer;
+	}
+	.burger span {
+		position: relative;
+		display: block;
+		height: 3px;
+		border-radius: 1px;
+		background: #000;
+		transition: all .2s ease-in-out, top .2s ease-in-out;
+		top: 0;
+	}
+	.burger span:nth-child(2) {
+		margin-top: 5px;
+	}
+	.burger span:nth-child(3) {
+		margin-top: 5px;
+	}
+	#toggler {
+		display: none;
+	}
+	#toggler:checked + label .burger.active span:nth-child(1){
+		transform: rotate(45deg);
+		top: 10px;
+		transition: top .2s ease-in-out, transform .2s ease-in-out;
+	}
+	#toggler:checked + label .burger.active span:nth-child(2){
+		display: none;
+	}
+	#toggler:checked + label .burger.active span:nth-child(3){
+		transform: rotate(-45deg);
+		top: 2px;
+		transition: top .2s ease-in-out, transform .2s ease-in-out;
+	}
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+	.cover {
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.wrap {
+		width: 90%;
+	}
+	.content-box {
+		width: 100%;
+	}
+	.cover {
+		font-size: 15px;
+		height: 10em;
+		line-height: 12em;
+	}
+	nav ul li {
+		height: 50px;
+		line-height: 50px;
+	}
+	nav ul li a {
+		font-size: 13px;
+	}
+}
