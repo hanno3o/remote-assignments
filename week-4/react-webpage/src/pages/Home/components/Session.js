@@ -1,4 +1,3 @@
-
 const Session = () => {
     return <div>
         <section>
@@ -11,10 +10,10 @@ const Session = () => {
             </div>
             <a href="#" className="cta">看更多歌曲</a>
             <div class="wrap wrap-hidden">
-                <div class="content-box box-5">Hann</div>
-                <div class="content-box box-6">Dumdi Dumdi</div>
-                <div class="content-box box-7">Villain Dies</div>
-                <div class="content-box box-8">Oh My God</div>
+                <div className="content-box box-5">Hann</div>
+                <div className="content-box box-6">Dumdi Dumdi</div>
+                <div className="content-box box-7">Villain Dies</div>
+                <div className="content-box box-8">Oh My God</div>
             </div>
         </section>
     </div>

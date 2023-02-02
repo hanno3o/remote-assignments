@@ -4,7 +4,7 @@ const Nav = () => {
             <a href="http://www.cubeent.co.kr/gidle"><img src="./logo.png" className="logo" alt="Logo"/></a> 
             <input type="checkbox" id="toggler" />
             <label htmlFor="toggler">
-                <div class="burger">
+                <div className="burger">
                     <span></span>
                     <span></span>
                     <span></span>
