@@ -1,9 +1,9 @@
-import { useState } from "react"
+import logo from "../logo.png"
 
 const Nav = () => {
     return <div>  
         <nav>
-            <a href="http://www.cubeent.co.kr/gidle"><img src="./logo.png" className="logo" alt="Logo"/></a> 
+            <a href="http://www.cubeent.co.kr/gidle"><img src={logo} className="logo" alt="Logo"/></a> 
             <input type="checkbox" id="toggler" />
             <label htmlFor="toggler">
                 <div className="burger">
