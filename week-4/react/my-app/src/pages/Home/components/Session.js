@@ -1,8 +1,7 @@
 import { useState } from "react"
 
 const Session = () => {
-    const [hiddenWrap, showHiddenWrap] = useState("wrap wrap-hidden")
-    
+    const [hiddenWrap, showHiddenWrap] = useState("wrap-hidden")
     return <div>
         <section>
             <h3><i className="fa-solid fa-fire"></i> Hit Songs</h3>
@@ -13,7 +12,7 @@ const Session = () => {
                 <div className="content-box box-4">Latata</div>
             </div>
             <a href="#" 
-               onClick= {showHiddenWrap}
+               onClick={() => showHiddenWrap("wrap")}
                className="cta">
                看更多歌曲
             </a>
