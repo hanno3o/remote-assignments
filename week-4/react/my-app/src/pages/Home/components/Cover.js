@@ -1,9 +1,9 @@
+import React, { useState } from 'react'
+
 const Cover = () => {
-    function renderCoverText(e) {
-        e.target.textContent = 'Have a Good Time!'
-    }
-    return <div onClick={renderCoverText} className="cover">
-    ❝ 내가 아닌 모습으로 사랑받을 바에는 나의 모습으로 미움 받겠다 ❞
+    const [text, showText] = useState("❝ 내가 아닌 모습으로 사랑받을 바에는 나의 모습으로 미움 받겠다 ❞")
+    return <div onClick={() =>showText("Have a good Time!")} className="cover">
+    {text}
     </div>
 }
 
